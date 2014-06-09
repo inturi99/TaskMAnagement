@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{24BFF7E8-E4A2-4924-BA1B-6F1AB37A4BBC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TaskManagement.Data</RootNamespace>
+    <AssemblyName>TaskManagement.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Mappings\IssueTypeMap.cs" />
+    <Compile Include="Mappings\PriorityMap.cs" />
+    <Compile Include="Mappings\ProjectMap.cs" />
+    <Compile Include="Mappings\RoleMap.cs" />
+    <Compile Include="Mappings\StatusMap.cs" />
+    <Compile Include="Mappings\UserMap.cs" />
+    <Compile Include="Migrations\201406061245455_Intial.cs" />
+    <Compile Include="Migrations\201406061245455_Intial.Designer.cs">
+      <DependentUpon>201406061245455_Intial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201406091015422_AddPriorityClass.cs" />
+    <Compile Include="Migrations\201406091015422_AddPriorityClass.Designer.cs">
+      <DependentUpon>201406091015422_AddPriorityClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201406091019429_AddStatusClass.cs" />
+    <Compile Include="Migrations\201406091019429_AddStatusClass.Designer.cs">
+      <DependentUpon>201406091019429_AddStatusClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201406091032219_AddIssueTypeClass.cs" />
+    <Compile Include="Migrations\201406091032219_AddIssueTypeClass.Designer.cs">
+      <DependentUpon>201406091032219_AddIssueTypeClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TaskManagerContext.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TaskManagement.Model\TaskManagement.Model.csproj">
+      <Project>{48c300b3-610d-48b3-a655-e9990bcc7744}</Project>
+      <Name>TaskManagement.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TaskManagement\TaskManagement.csproj">
+      <Project>{14a256a0-0949-46ea-be07-7d3d7e9d1187}</Project>
+      <Name>TaskManagement</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201406061245455_Intial.resx">
+      <DependentUpon>201406061245455_Intial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201406091015422_AddPriorityClass.resx">
+      <DependentUpon>201406091015422_AddPriorityClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201406091019429_AddStatusClass.resx">
+      <DependentUpon>201406091019429_AddStatusClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201406091032219_AddIssueTypeClass.resx">
+      <DependentUpon>201406091032219_AddIssueTypeClass.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

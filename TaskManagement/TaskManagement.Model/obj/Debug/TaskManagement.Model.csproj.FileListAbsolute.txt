@@ -1,0 +1,6 @@
+E:\TaskManagment\TaskManagement\TaskManagement.Model\bin\Debug\TaskManagement.Model.dll.config
+E:\TaskManagment\TaskManagement\TaskManagement.Model\bin\Debug\TaskManagement.Model.dll
+E:\TaskManagment\TaskManagement\TaskManagement.Model\bin\Debug\TaskManagement.Model.pdb
+E:\TaskManagment\TaskManagement\TaskManagement.Model\obj\Debug\TaskManagement.Model.csprojResolveAssemblyReference.cache
+E:\TaskManagment\TaskManagement\TaskManagement.Model\obj\Debug\TaskManagement.Model.dll
+E:\TaskManagment\TaskManagement\TaskManagement.Model\obj\Debug\TaskManagement.Model.pdb
